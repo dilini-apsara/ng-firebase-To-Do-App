@@ -24,3 +24,6 @@ This is a simple and responsive to-do application built using Angular and Fireba
   - Java
 
 
+## License
+Copyright & copy ; 2024 Dep12 All Rights Reserved.
+This project is licensed under [MIT](LICENSE.txt).
