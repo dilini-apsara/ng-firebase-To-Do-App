@@ -1,0 +1,23 @@
+<header class="p-2 border-0 flex justify-between
+    h-[50px] items-center
+    border-b border-solid border-b-gray-300">
+  <div class="flex gap-1 items-center">
+    <mat-icon class="text-sky-500 text-4xl !w-[40px] !h-[40px]"
+              fontIcon="task_alt"/>
+    <h1 class="!text-3xl !m-0 select-none">To-do List App</h1>
+  </div>
+  <div (click)="$event.stopPropagation(); isMenuVisible = true" #profilePic class="rounded-full w-[45px] h-[45px]
+    bg-contain cursor-pointer
+   border border-gray-300 border-solid"></div>
+</header>
+<div *ngIf="isMenuVisible" (click)="$event.stopPropagation()" class="flex flex-col items-center
+fixed right-0 border border-solid gap-2 pb-2
+border-gray-300 rounded-b">
+  <div class="text-center border-0 border-b
+  border-solid border-gray-300 p-2 px-8">
+  <strong>{{ authService.getPrincipal()?.displayName }}</strong>
+<!--  <div>{{ authService.getPrincipal()?.email }}</div>-->
+  <div>{{ authService.getPrincipalEmail()}}</div>
+  </div>
+  <button mat-stroked-button (click)="authService.signOut()">Sign Out</button>
+</div>
